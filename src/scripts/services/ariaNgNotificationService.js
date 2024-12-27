@@ -108,7 +108,7 @@
             }
 
             options = angular.extend({
-                icon: 'tileicon.png'
+                icon: 'favicon.png'
             }, options);
 
             recordBrowserNotificationHistory();
