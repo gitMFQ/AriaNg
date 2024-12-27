@@ -1,16 +1,16 @@
 (function () {
     'use strict';
 
-    angular.module('ariaNg').controller('AriaNgSettingsController', ['$rootScope', '$scope', '$routeParams', '$window', '$interval', '$timeout', '$filter', 'clipboard', 'ariaNgLanguages', 'ariaNgCommonService', 'ariaNgVersionService', 'ariaNgKeyboardService', 'ariaNgNotificationService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgFileService', 'ariaNgSettingService', 'ariaNgMonitorService', 'ariaNgTitleService', 'aria2SettingService', function ($rootScope, $scope, $routeParams, $window, $interval, $timeout, $filter, clipboard, ariaNgLanguages, ariaNgCommonService, ariaNgVersionService, ariaNgKeyboardService, ariaNgNotificationService, ariaNgLocalizationService, ariaNgLogService, ariaNgFileService, ariaNgSettingService, ariaNgMonitorService, ariaNgTitleService, aria2SettingService) {
+    angular.module('ariaNg').controller('AriaNgSettingsController', ['$rootScope', '$scope', '$routeParams', '$window', '$interval', '$timeout', '$filter', 'clipboard', 'ariaNgLanguages', 'ariaNgCommonService', 'ariaNgVersionService', 'ariaNgKeyboardService', 'ariaNgNotificationService', 'ariaNgLocalizationService', 'ariaNgLogService', 'ariaNgFileService', 'ariaNgSettingService', 'ariaNgMonitorService', /*'ariaNgTitleService',*/ 'aria2SettingService', function ($rootScope, $scope, $routeParams, $window, $interval, $timeout, $filter, clipboard, ariaNgLanguages, ariaNgCommonService, ariaNgVersionService, ariaNgKeyboardService, ariaNgNotificationService, ariaNgLocalizationService, ariaNgLogService, ariaNgFileService, ariaNgSettingService, ariaNgMonitorService, /*ariaNgTitleService,*/ aria2SettingService) {
         var extendType = $routeParams.extendType;
         var lastRefreshPageNotification = null;
 
-        var getFinalTitle = function () {
+        /*var getFinalTitle = function () {
             return ariaNgTitleService.getFinalTitleByGlobalStat({
                 globalStat: ariaNgMonitorService.getCurrentGlobalStat(),
                 currentRpcProfile: getCurrentRPCProfile()
             });
-        };
+        };*/
 
         var getCurrentRPCProfile = function () {
             if (!$scope.context || !$scope.context.rpcSettings || $scope.context.rpcSettings.length < 1) {
@@ -69,7 +69,7 @@
 
                 return languages;
             })(),
-            titlePreview: getFinalTitle(),
+            //titlePreview: getFinalTitle(),
             availableTime: ariaNgCommonService.getTimeOptions([1000, 2000, 3000, 5000, 10000, 30000, 60000], true),
             trueFalseOptions: [{name: 'Enabled', value: true}, {name: 'Disabled', value: false}],
             showRpcSecret: false,
@@ -87,7 +87,7 @@
             exportCommandApiOptions: null
         };
 
-        $scope.context.titlePreview = getFinalTitle();
+        //$scope.context.titlePreview = getFinalTitle();
         $scope.context.showDebugMode = $scope.context.sessionSettings.debugMode || extendType === 'debug';
 
         $scope.changeGlobalTab = function () {
@@ -114,9 +114,9 @@
             return parseInt($scope.context.currentTab.substring(3));
         };
 
-        $scope.updateTitlePreview = function () {
-            $scope.context.titlePreview = getFinalTitle();
-        };
+        //$scope.updateTitlePreview = function () {
+        //    $scope.context.titlePreview = getFinalTitle();
+        //};
 
         $rootScope.swipeActions.extendLeftSwipe = function () {
             var tabIndex = -1;
@@ -161,7 +161,7 @@
                 ariaNgLocalizationService.applyLanguage(value);
             }
 
-            $scope.updateTitlePreview();
+            //$scope.updateTitlePreview();
         };
 
         $scope.setTheme = function (value) {
@@ -173,9 +173,9 @@
             ariaNgSettingService.setDebugMode(value);
         };
 
-        $scope.setTitle = function (value) {
-            ariaNgSettingService.setTitle(value);
-        };
+        //$scope.setTitle = function (value) {
+        //    ariaNgSettingService.setTitle(value);
+        //};
 
         $scope.setEnableBrowserNotification = function (value) {
             ariaNgSettingService.setBrowserNotification(value);
@@ -203,10 +203,10 @@
             ariaNgSettingService.setWebSocketReconnectInterval(value);
         };
 
-        $scope.setTitleRefreshInterval = function (value) {
-            setNeedRefreshPage();
-            ariaNgSettingService.setTitleRefreshInterval(value);
-        };
+        //$scope.setTitleRefreshInterval = function (value) {
+        //    setNeedRefreshPage();
+        //    ariaNgSettingService.setTitleRefreshInterval(value);
+        //};
 
         $scope.setGlobalStatRefreshInterval = function (value) {
             setNeedRefreshPage();

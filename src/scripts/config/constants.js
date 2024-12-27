@@ -23,11 +23,11 @@
         historyMaxStoreCount: 10,
         cachedDebugLogsLimit: 100
     }).constant('ariaNgDefaultOptions', {
-        language: 'en',
-        theme: 'light',
-        title: '${downspeed}, ${upspeed} - ${title}',
-        titleRefreshInterval: 5000,
-        browserNotification: false,
+        language: 'zh_Hans',
+        theme: 'system',
+        //title: '',
+        //titleRefreshInterval: 0,
+        browserNotification: true,
         browserNotificationSound: true,
         browserNotificationFrequency: 'unlimited',
         rpcAlias: '',

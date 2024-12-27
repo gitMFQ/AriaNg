@@ -61,7 +61,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+                    <!--div class="row">
                         <div class="setting-key setting-key-without-desc col-sm-4">
                             <span translate>Page Title</span>
                             <i class="icon-primary fa fa-question-circle" data-toggle="popover"
@@ -82,7 +82,7 @@
                                    ng-change="setTitle(context.settings.title); updateTitlePreview()"/>
                             <em>[<span translate>Preview</span>] <span ng-bind="context.titlePreview"></span></em>
                         </div>
-                    </div>
+                    </div-->
                     <div class="row" ng-if="isSupportNotification()">
                         <div class="setting-key setting-key-without-desc col-sm-4">
                             <span translate>Enable Browser Notification</span>
@@ -134,7 +134,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+                    <!--div class="row">
                         <div class="setting-key setting-key-without-desc col-sm-4">
                             <span translate>Updating Page Title Interval</span>
                             <span class="asterisk">*</span>
@@ -146,7 +146,7 @@
                                     ng-options="time.optionValue as (time.name | translate: {value: time.value}) for time in context.availableTime">
                             </select>
                         </div>
-                    </div>
+                    </div-->
                     <div class="row">
                         <div class="setting-key setting-key-without-desc col-sm-4">
                             <span translate>Updating Global Stat Interval</span>
