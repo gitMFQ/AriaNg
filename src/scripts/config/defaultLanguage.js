@@ -343,10 +343,13 @@
                 'checksum.failed': 'Checksum validation failed.'
             },
             'languages': {
+                'Czech': 'Czech',
+                'German': 'German',
                 'English': 'English',
                 'Spanish': 'Spanish',
                 'French': 'French',
                 'Italian': 'Italian',
+                'Polish': 'Polish',
                 'Russian': 'Russian',
                 'Simplified Chinese': 'Simplified Chinese',
                 'Traditional Chinese': 'Traditional Chinese'
